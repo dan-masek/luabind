@@ -126,8 +126,8 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
     list(APPEND LUABIND_EXTRA_LIBS m)
 endif()
 
-set(CMAKE_DEBUG_POSTFIX "-d")
-add_library(luabind ${LUABIND_SRCS} ${LUABIND_API} ${LUABIND_DETAIL_API})
+set(CMAKE_DEBUG_POSTFIX "d")
+add_library(luabind ${LUABIND_SRCS} ${LUABIND_API} ${LUABIND_DETAIL_API} ../luabind_dll.rc)
 target_link_libraries(luabind ${LUA_LIBRARIES} ${LUABIND_EXTRA_LIBS} ${CMAKE_DL_LIBS})
 set_property(TARGET
     luabind PROPERTY

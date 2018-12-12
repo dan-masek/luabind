@@ -1,0 +1,27 @@
+#include <windows.h>
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,9,1,1
+ PRODUCTVERSION 0,9,1,1
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS 0
+ FILEOS VOS__WINDOWS32
+ FILETYPE VFT_DLL
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Rasterbar\0"
+            VALUE "FileDescription", "LuaBind - Lua Bindings\0"
+            VALUE "FileVersion", "0.9.1.1\0"
+            VALUE "ProductName", "LuaBind - Lua Bindings\0"
+            VALUE "ProductVersion", "0.9.1.1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04E4
+    END
+END
