@@ -229,12 +229,16 @@ void test_main(lua_State* L)
     DOSTRING(L, "assert(test * test == 35)");
     DOSTRING(L, "assert(test % test == 15)");
     DOSTRING(L, "assert(test * 3 == '(operator_tester, int) overload')")
+
+#if LUA_VERSION_NUM >= 503
     DOSTRING(L, "assert(test & test == 'bitwise and operator')")
     DOSTRING(L, "assert(test | test == 'bitwise or operator')")
     DOSTRING(L, "assert(test ~ test == 'bitwise xor operator')")
     DOSTRING(L, "assert(~test == 'bitwise not operator')")
     DOSTRING(L, "assert(test << test == 'left shift operator')")
     DOSTRING(L, "assert(test >> test == 'right shift operator')")
+#endif
+
     DOSTRING(L, "assert(test + test2 == 73)");
     DOSTRING(L, "assert(2 + test == 2 + 2)");
     DOSTRING(L, "assert(test + 2 == 1 + 2)");
