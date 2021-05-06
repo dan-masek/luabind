@@ -3,8 +3,7 @@
 # http://academic.cleardefinition.com/
 # Iowa State University HCI Graduate Program/VRAC
 
-cmake_minimum_required(VERSION 2.8)
-set(CMAKE_LEGACY_CYGWIN_WIN32 0) # Remove when CMake >= 2.8.4 is required
+cmake_minimum_required(VERSION 3.11)
 project(LuaBind)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "0")
@@ -56,7 +55,7 @@ set (LUABIND_NO_STD_SHARED_PTR OFF)
 set (LUABIND_DYNAMIC_LINK ON)
 
 set(LUA_FOUND 1)
-set(LUA_INCLUDE_DIRS d:/sdk/lua530/include)
+set(LUA_INCLUDE_DIRS d:/library/lua_5_3_4/include )
 
 IF(MSVC12)
   IF(CMAKE_CL_64)
@@ -105,3 +104,9 @@ include_directories(${Boost_INCLUDE_DIRS}
 	${LUA_INCLUDE_DIRS})
 
 add_subdirectory(src)
+
+set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1)
+include(CTest)
+if(BUILD_TESTING)
+    add_subdirectory(test)
+endif()

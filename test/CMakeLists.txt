@@ -73,7 +73,7 @@ add_library(test_main STATIC
 if (BUILD_SHARED_LIBS AND MSVC)
     add_custom_command(TARGET test_main POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
-            $<TARGET_FILE:luabind> $<TARGET_FILE_DIR:testmain>
+            $<TARGET_FILE:luabind> $<TARGET_FILE_DIR:test_main> 
         COMMENT "Copying DLL...")
 endif()
 
