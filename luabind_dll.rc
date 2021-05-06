@@ -1,8 +1,8 @@
 #include <windows.h>
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,9,1,1
- PRODUCTVERSION 0,9,1,1
+ FILEVERSION 0,9,1,2
+ PRODUCTVERSION 0,9,1,2
  FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
  FILEFLAGS 0
  FILEOS VOS__WINDOWS32
@@ -15,9 +15,9 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Rasterbar\0"
             VALUE "FileDescription", "LuaBind - Lua Bindings\0"
-            VALUE "FileVersion", "0.9.1.1\0"
+            VALUE "FileVersion", "0.9.1.2\0"
             VALUE "ProductName", "LuaBind - Lua Bindings\0"
-            VALUE "ProductVersion", "0.9.1.1\0"
+            VALUE "ProductVersion", "0.9.1.2\0"
         END
     END
     BLOCK "VarFileInfo"
