@@ -13,6 +13,8 @@
 
 # include <stdexcept>
 
+#include <memory>
+
 namespace luabind { namespace detail {
 
 class instance_holder
@@ -52,7 +54,7 @@ inline mpl::true_ check_const_pointer(void const*)
 }
 
 template <class T>
-void release_ownership(std::auto_ptr<T>& p)
+void release_ownership(std::unique_ptr<T>& p)
 {
     p.release();
 }
@@ -78,7 +80,7 @@ public:
         P p, class_id dynamic_id, void* dynamic_ptr
     )
       : instance_holder(check_const_pointer(false ? get_pointer(p) : 0))
-      , m_p(p)
+      , m_p(std::move(p))
       , m_weak(0)
       , m_dynamic_id(dynamic_id)
       , m_dynamic_ptr(dynamic_ptr)
@@ -114,7 +116,7 @@ public:
 private:
     mutable P m_p;
     // weak will hold a possibly stale pointer to the object owned
-    // by p once p has released it's owership. This is a workaround
+    // by p once p has released it's ownership. This is a workaround
     // to make adopt() work with virtual function wrapper classes.
     void* m_weak;
     class_id m_dynamic_id;

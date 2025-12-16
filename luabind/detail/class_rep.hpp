@@ -34,6 +34,7 @@
 #include <utility>
 #include <vector>
 
+#pragma warning(disable: 4251)
 
 namespace luabind { namespace detail
 {
@@ -181,6 +182,8 @@ namespace luabind { namespace detail
     bool is_class_rep(lua_State* L, int index);
 
 }}
+
+#pragma warning(default: 4251)
 
 //#include <luabind/detail/overload_rep_impl.hpp>
 

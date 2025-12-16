@@ -30,6 +30,8 @@
 
 #include <boost/aligned_storage.hpp>
 
+#pragma warning(disable: 4251)
+
 namespace luabind { namespace detail
 {
     // implements the selection between dynamic dispatch
@@ -133,5 +135,7 @@ namespace luabind { namespace detail
     LUABIND_API object_rep* push_new_instance(lua_State* L, class_rep* cls);
 
 }}
+
+#pragma warning(default: 4251)
 
 #endif // LUABIND_OBJECT_REP_HPP_INCLUDED

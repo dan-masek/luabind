@@ -105,6 +105,7 @@
 
 #include <cassert>
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -304,7 +305,7 @@ namespace luabind
         template <class T>
         struct default_pointer<null_type, T>
         {
-            typedef std::auto_ptr<T> type;
+            typedef std::unique_ptr<T> type;
         };
 
         template <class Class, class Pointer, class Signature, class Policies>

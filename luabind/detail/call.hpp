@@ -26,6 +26,9 @@
 #  include <boost/type_traits/is_void.hpp>
 #  include <luabind/lua_include.hpp>
 
+#pragma warning(disable : 4275)
+#pragma warning(disable : 4251)
+
 namespace luabind { namespace detail {
 
 struct invoke_context;
@@ -330,5 +333,8 @@ invoke_normal
 }
 
 # undef N
+
+#pragma warning(default : 4275)
+#pragma warning(default : 4251)
 
 #endif

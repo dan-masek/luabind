@@ -34,6 +34,9 @@
 
 #include <exception>
 
+#pragma warning(disable : 4275)
+#pragma warning(disable : 4251)
+
 namespace luabind
 {
 
@@ -87,5 +90,8 @@ namespace luabind
     LUABIND_API void set_pcall_callback(pcall_callback_fun e);
     LUABIND_API pcall_callback_fun get_pcall_callback();
 }
+
+#pragma warning(default : 4275)
+#pragma warning(default : 4251)
 
 #endif // LUABIND_ERROR_HPP_INCLUDED

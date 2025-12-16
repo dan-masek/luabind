@@ -30,6 +30,8 @@
 
 #include <map>
 
+#pragma warning(disable: 4251)
+
 namespace luabind { namespace detail
 {
     class class_rep;
@@ -82,5 +84,7 @@ namespace luabind { namespace detail
     };
 
 }}
+
+#pragma warning(default: 4251)
 
 #endif // LUABIND_CLASS_REGISTRY_HPP_INCLUDED

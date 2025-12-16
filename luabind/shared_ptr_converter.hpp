@@ -14,6 +14,8 @@
 # include <boost/mpl/bool.hpp>           // for bool_, false_
 # include <boost/smart_ptr/shared_ptr.hpp>  // for shared_ptr, get_deleter
 
+#pragma warning(disable: 4251)
+
 namespace luabind {
 
 namespace mpl = boost::mpl;
@@ -181,5 +183,7 @@ LUABIND_API state_unreferenced_fun get_state_unreferenced_callback(
 LUABIND_API bool is_state_unreferenced(lua_State* L);
 
 } // namespace luabind
+
+#pragma warning(default: 4251)
 
 #endif // LUABIND_SHARED_PTR_CONVERTER_090211_HPP

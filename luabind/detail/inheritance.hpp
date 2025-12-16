@@ -15,6 +15,7 @@
 # include <memory>
 # include <vector>
 
+#pragma warning(disable: 4251)
 
 namespace luabind { namespace detail {
 
@@ -171,5 +172,7 @@ struct registered_class<T const>
 {};
 
 }} // namespace luabind::detail
+
+#pragma warning(default: 4251)
 
 #endif // LUABIND_INHERITANCE_090217_HPP

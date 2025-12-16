@@ -29,6 +29,8 @@
 #include <luabind/object.hpp>
 #include <luabind/prefix.hpp>
 
+#pragma warning(disable : 4251)
+
 namespace luabind
 {
     struct LUABIND_API class_info
@@ -45,5 +47,7 @@ namespace luabind
 
     LUABIND_API void bind_class_info(lua_State*);
 }
+
+#pragma warning(default : 4251)
 
 #endif
